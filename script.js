@@ -1,7 +1,6 @@
 const backTT = document.createElement('button');
 createBtn();
 
-// Crear botón back to top
 function createBtn() {
     backTT.innerHTML = '&#xF148';
     backTT.style.position = 'fixed';
@@ -25,6 +24,16 @@ function backToTop() {
     } else {
         backTT.style.display = 'none';
     }
+    // Comprobar k el contenedor esté arriba
+    const containers = document.querySelectorAll('.container-fluid');
+    containers.forEach(container => {
+        const rect = container.getBoundingClientRect();
+        if (rect.top === 0) {
+            container.classList.add('at-top');
+        } else {
+            container.classList.remove('at-top');
+        }
+    });
 }
 
 function scrollToTop() {

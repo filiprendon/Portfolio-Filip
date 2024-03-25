@@ -4,6 +4,9 @@ body{
 
 .container-fluid{
     min-height: 100vh;
+    transition: all 0.5s ease;
+    position: sticky;
+    top: 0;
 }
 
 .pr{
@@ -25,3 +28,8 @@ h3:hover {
     transform: translateX(15px);
     animation-duration: 2s;
 }
+
+/* .at-top {
+    background-color: #ffd16f;
+    color: white;
+} */
