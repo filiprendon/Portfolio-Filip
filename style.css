@@ -1,5 +1,8 @@
-body{
+/* body{
     background-color: #333;
+} */
+*{
+    user-select: none;
 }
 
 .container-fluid{
@@ -8,11 +11,15 @@ body{
     position: sticky;
     top: 0;
 }
-
-.pr{
-    background-color: rgb(233, 232, 232);
+.pr {
+    background-color: #7e7e7e;
+    color: #d3d3d3;
 }
 
+.im {
+    background-color: rgb(233, 232, 232);
+    color: #464646;
+}
 a{
     text-decoration: none !important;
     color: #333 !important;
@@ -33,3 +40,18 @@ h3:hover {
     background-color: #ffd16f;
     color: white;
 } */
+#about-me#about-me h1, #skills h1, #projects h1, #contact h1 {
+    color: transparent; /* Lo hago transparente, si lo pongo display none no está el espacio*/
+}
+
+#backtt {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* ver pq no funciona */
+#backtt:hover svg {
+    transform: translateY(-5px);
+}

@@ -1,28 +1,28 @@
-const backTT = document.createElement('button');
+const backtt = document.getElementById('backtt');
 createBtn();
 
 function createBtn() {
-    backTT.innerHTML = '&#xF148';
-    backTT.style.position = 'fixed';
-    backTT.style.bottom = '30px';
-    backTT.style.right = '30px';
-    backTT.style.borderRadius = '25px';
-    backTT.style.width = '50px';
-    backTT.style.height = '50px';
-    backTT.style.backgroundColor = '#ffd16f';
-    backTT.style.color = 'white';
-    backTT.style.border = 'none';
-    backTT.style.cursor = 'pointer';
-    backTT.id = "back-to-top";
-    backTT.addEventListener('click', scrollToTop);
-    document.body.appendChild(backTT);
+    // backtt.innerHTML = '&#xF148';
+    backtt.style.position = 'fixed';
+    backtt.style.bottom = '30px';
+    backtt.style.right = '30px';
+    backtt.style.borderRadius = '25px';
+    backtt.style.width = '50px';
+    backtt.style.height = '50px';
+    backtt.style.backgroundColor = '#ffd16f';
+    backtt.style.color = 'black';
+    backtt.style.border = 'none';
+    backtt.style.cursor = 'pointer';
+    backtt.id = "back-to-top";
+    backtt.addEventListener('click', scrollToTop);
+    document.body.appendChild(backtt);
 }
 
 function backToTop() {
     if (document.body.scrollTop > 150 || document.documentElement.scrollTop > 150) {
-        backTT.style.display = 'block';
+        backtt.style.display = 'block';
     } else {
-        backTT.style.display = 'none';
+        backtt.style.display = 'none';
     }
     // Comprobar k el contenedor esté arriba
     const containers = document.querySelectorAll('.container-fluid');
