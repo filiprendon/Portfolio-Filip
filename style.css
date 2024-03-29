@@ -58,3 +58,25 @@ h3 {
 #backtt:hover svg {
     transform: translateY(-5px);
 }
+
+/* Mejorar esto */
+.card-img-top {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.card-body {
+    padding: 0;
+}
+
+
+/* Fades */
+/* .fade-in{
+    opacity: 1;
+    transition: opacity 2.5s ease;
+}
+
+.fade-out{
+    opacity:  1;
+    transition: opacity 0.5s ease;
+} */

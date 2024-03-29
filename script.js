@@ -53,30 +53,58 @@ window.addEventListener('scroll', backToTop);
 // Cambiar colores h1 a medida k el usuario haga scroll
 document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener('scroll', function () {
-        let mainContainer = document.getElementById('main').getElementsByTagName('h1')[0];
-        let diffConteiner = document.getElementsByClassName('diff-container');
+        let mainContainer = document.getElementById('main');
+        let diffContainer = document.getElementsByClassName('diff-container');
+        let contentTitle = document.getElementsByClassName('content-title');
 
         // Se obtiene la posición del h1 del main
         var mainContainerPosition = mainContainer.getBoundingClientRect().top;
 
         // Verificar si están en la misma posición vertical
-        for (var i = 0; i < diffConteiner.length; i++) {
-            var diffContainerPosition = diffConteiner[i].getBoundingClientRect().top;
+        for (var i = 0; i < diffContainer.length; i++) {
+            var diffContainerPosition = diffContainer[i].getBoundingClientRect().top;
 
             // Si el h1 de otro contenedor está cerca de la posición del h1 principal, cambio su color gradualmente
             if (diffContainerPosition <= mainContainerPosition) {
-                if (diffConteiner[i].classList.contains('pr')) {
-                    diffConteiner[i].style.transition = "color 0s ease";
-                    diffConteiner[i].style.color = "#d3d3d3";
+                if (diffContainer[i].classList.contains('pr')) {
+                    diffContainer[i].style.transition = "color 0s ease";
+                    // diffContainer[i].classList.add('fade-in');
+                    diffContainer[i].style.color = "#d3d3d3";
+                    
+                    // para hacer el efecto de movimineto del contenidoS
+                    // for (var j = 0; j < contentTitle.length; j++) {
+                    //     contentTitle[j].style.transform = 'translateX(15px)';
+                    // }
                 }
-                else if (diffConteiner[i].classList.contains('im')) {
-                    diffConteiner[i].style.transition = "color 0s ease";
-                    diffConteiner[i].style.color = "#464646";
+                else if (diffContainer[i].classList.contains('im')) {
+                    diffContainer[i].style.transition = "color 0s ease";
+                    diffContainer[i].style.color = "#464646";
                 }
 
+                
+
             } else {
-                diffConteiner[i].style.color = "transparent";
+                diffContainer[i].style.color = "transparent";
             }
         }
     });
 });
+
+
+// Enseñar la descripción del proyecto o de mi funcion en el al hacer hover
+let descProyectos = document.querySelectorAll('.descProyecto');
+
+descProyectos.forEach(descProyecto => {
+    descProyecto.addEventListener("mouseover", toggleDescription);
+    descProyecto.addEventListener("mouseout", toggleDescription);
+});
+
+function toggleDescription(event) {
+    let collapse = event.currentTarget.querySelector('.collapse');
+    collapse.classList.toggle('show');
+}
+
+
+// function  hideDescription(event) {
+//     event.target.click()
+// }
