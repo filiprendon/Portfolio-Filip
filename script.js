@@ -1,4 +1,6 @@
 const backtt = document.getElementById('backtt');
+let clicked = false;
+
 createBtn();
 // Borra la url
 // window.history.replaceState('','','/');
@@ -70,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     diffContainer[i].style.transition = "color 0s ease";
                     // diffContainer[i].classList.add('fade-in');
                     diffContainer[i].style.color = "#d3d3d3";
-                    
+
                     // para hacer el efecto de movimineto del contenidoS
                     // for (var j = 0; j < contentTitle.length; j++) {
                     //     contentTitle[j].style.transform = 'translateX(15px)';
@@ -81,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     diffContainer[i].style.color = "#464646";
                 }
 
-                
+
 
             } else {
                 diffContainer[i].style.color = "transparent";
@@ -92,18 +94,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // Enseñar la descripción del proyecto o de mi funcion en el al hacer hover
-let descProyectos = document.querySelectorAll('.descProyecto');
+let descProyectos = document.getElementsByClassName('descProyecto');
 
-descProyectos.forEach(descProyecto => {
-    descProyecto.addEventListener("mouseover", toggleDescription);
-    descProyecto.addEventListener("mouseout", toggleDescription);
-});
-
-function toggleDescription(event) {
-    let collapse = event.currentTarget.querySelector('.collapse');
-    collapse.classList.toggle('show');
+for (let i = 0; i < descProyectos.length; i++) {
+    descProyectos[i].addEventListener('mouseover', showDescription);
+    descProyectos[i].addEventListener('mouseout', showDescription);
 }
 
+function showDescription(event) {
+    event.target.click();
+}
+
+// function checkCollapsed(projectUrl) {
+//     let isCollapsed = document.querySelector('[aria-expanded]');
+//     let proje = document.querySelector('.p1');
+//     if (isCollapsed && proje) {
+//         if(proje.click()){
+//             window.location.href = projectUrl;
+//         }
+        
+//     }
+
+// }
 
 // function  hideDescription(event) {
 //     event.target.click()
