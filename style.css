@@ -1,17 +1,60 @@
 /* body{
     background-color: #333;
 } */
-/* Queda más bonito*/
-*{
+* {
     user-select: none;
 }
 
-.container-fluid{
+/* .skills-carrousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 250px;
+    width: 100%;
+    background-color: aliceblue;
+    margin: 0;
+    padding: 0;
+    gap: 15px;
+}
+
+@media (max-width: 768px) {
+    .skills-carrousel {
+        flex-direction: column;
+    }
+
+    .col {
+        margin: 7.5px 0;
+    }
+} */
+
+
+.fam-gallery-marquee {
+    overflow: hidden;
+}
+
+.fam-gallery {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    gap: 15px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+.container-fluid {
     min-height: 100vh;
     transition: all 0.5s ease;
     position: sticky;
     top: 0;
 }
+
 .pr {
     background-color: #7e7e7e;
     color: #d3d3d3;
@@ -21,7 +64,8 @@
     background-color: rgb(233, 232, 232);
     color: #464646;
 }
-a{
+
+a {
     text-decoration: none !important;
     color: #333 !important;
     cursor: default;
@@ -43,8 +87,12 @@ h3 {
     background-color: #ffd16f;
     color: white;
 } */
-#about-me#about-me h1, #skills h1, #projects h1, #contact h1 {
-    color: transparent; /* Lo hago transparente, si lo pongo display none no está el espacio*/
+#about-me#about-me h1,
+#skills h1,
+#projects h1,
+#contact h1 {
+    color: transparent;
+    /* Lo hago transparente, si lo pongo display none no está el espacio*/
 }
 
 #backtt {

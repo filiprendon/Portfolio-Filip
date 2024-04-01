@@ -105,6 +105,24 @@ function showDescription(event) {
     event.target.click();
 }
 
+// pausa la animación al hacer hover...
+const gallery = document.querySelector('.fam-gallery');
+let animationPaused = false;
+
+gallery.addEventListener('mouseenter', function() {
+    if (!animationPaused) {
+        this.style.animationPlayState = 'paused';
+        animationPaused = true;
+    }
+});
+
+gallery.addEventListener('mouseleave', function() {
+    if (animationPaused) {
+        this.style.animationPlayState = 'running';
+        animationPaused = false;
+    }
+});
+
 // function checkCollapsed(projectUrl) {
 //     let isCollapsed = document.querySelector('[aria-expanded]');
 //     let proje = document.querySelector('.p1');
