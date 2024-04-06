@@ -56,18 +56,18 @@
 }
 
 .pr {
-    background-color: #7e7e7e;
-    color: #d3d3d3;
+    background-color: #E9EDC9;
+    color: #D4A373;
 }
 
 .im {
-    background-color: rgb(233, 232, 232);
-    color: #464646;
+    background-color: #FEFAE0;
+    color: #D4A373;
 }
 
 a {
     text-decoration: none !important;
-    color: #333 !important;
+    color: #D4A373 !important;
     cursor: default;
 }
 
